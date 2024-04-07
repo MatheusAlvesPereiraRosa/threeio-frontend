@@ -11,7 +11,7 @@ export const Navbar = () => {
                     className="p-5 text-xl text-white "
                 >
                     <NavLink
-                        to="/"
+                        to="/math"
                         className={({
                             isActive,
                             isPending,
