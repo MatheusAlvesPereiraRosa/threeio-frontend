@@ -1,31 +1,35 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Threeio/Front-End
 
-Currently, two official plugins are available:
+Esse é o Front-End da aplicação de teste do desafio técnico dessa vaga. Ele foi feito usando React, Typescript, TailwindCSS, Docker e Docker-Compose (infelizmente não consegue ser executado devido a um erro que será tratado posteriormente)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Comandos para executar
 
-## Expanding the ESLint configuration
+Primeiro de tudo, certifique-se de que sua máquina possuí o docker baixado.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Após isso execute:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```
+    docker build -t threeio/frontend .
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-# threeio-frontend
+Depois rode o container com:
+
+```
+    docker run -p 5173:5173 threeio/frontend
+```
+
+Após isso sua aplicação estará rodando e já poderá ser acessada na URL do navegador. Lembrando que primeiro é necessário iniciar o Back-End.
+
+Obs.: O docker-compose não está funcionando direito no projeto devido a um erro no npm com depências opcionais, como pode ser acesso/visto a seguir
+
+* Error: Cannot find module @rollup/rollup-linux-x64-musl. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.*
+
+Caso queira ver o erro pessoalmente rode:
+
+```
+    docker-compose up --build
+```
+
+
+
