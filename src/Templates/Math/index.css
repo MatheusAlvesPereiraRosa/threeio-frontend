@@ -1,0 +1,9 @@
+.form-height {
+    height: calc(100vh - 150px);
+}
+
+.math-operator {
+    position: absolute;
+    top: 55px;
+    left: 25px;
+}
